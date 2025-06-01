@@ -28,7 +28,6 @@ const AutocompleteInputFieldComp = createFieldComp<AutocompleteInputField>(
                 required,
                 labelClassName,
                 descriptionClassName,
-                inputClassName,
                 placeholder,
                 items,
                 threshold,

@@ -6,6 +6,7 @@ import type {
     UseFormStateReturn,
 } from "react-hook-form";
 
+export type RenderComponentFn = () => React.ReactNode;
 export type BaseFieldType = {
     kind: string;
     label?: React.ReactNode;
@@ -14,6 +15,8 @@ export type BaseFieldType = {
     skip?: boolean;
     className?: string;
     required?: boolean;
+    renderComponentBefore?: RenderComponentFn;
+    renderComponentAfter?: RenderComponentFn;
 };
 
 export type GenFieldType<TKind extends string, TOther> = BaseFieldType & {

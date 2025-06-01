@@ -14,13 +14,24 @@ export function RenderField<T extends BaseFieldType>({
     if (schema.skip) {
         return null;
     }
+
+    const { renderComponentBefore, renderComponentAfter, ...restSchema } =
+        schema;
     return (
-        <ShadFormField
-            name={name}
-            disabled={schema.disabled}
-            render={(formProps) => (
-                <Comp schema={schema} name={name} {...formProps} />
-            )}
-        />
+        <>
+            {renderComponentBefore?.()}
+            <ShadFormField
+                name={name}
+                disabled={schema.disabled}
+                render={(formProps) => (
+                    <Comp
+                        schema={restSchema as any}
+                        name={name}
+                        {...formProps}
+                    />
+                )}
+            />
+            {renderComponentAfter?.()}
+        </>
     );
 }

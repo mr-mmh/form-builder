@@ -94,6 +94,7 @@ export function createRenderForm<
                         if (field.kind === "Skip") {
                             return null;
                         }
+
                         const Comp = fieldRegistry[field.kind];
                         if (!Comp) {
                             throw new Error(
