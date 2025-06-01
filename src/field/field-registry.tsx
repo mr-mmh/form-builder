@@ -1,13 +1,11 @@
-import {
-    CheckboxFieldComp,
-    InputFieldComp,
-    PasswordInputFieldComp,
-    RadioGroupComp,
-    SelectFieldComp,
-    SliderFieldComp,
-    SwitchFieldComp,
-    TextareaFieldComp,
-} from "./registry";
+import { CheckboxFieldComp } from "./registry/checkbox-field";
+import { InputFieldComp } from "./registry/input-field";
+import { PasswordInputFieldComp } from "./registry/password-input-field";
+import { RadioGroupComp } from "./registry/radio-field";
+import { SelectFieldComp } from "./registry/select-field";
+import { SliderFieldComp } from "./registry/slider-field";
+import { SwitchFieldComp } from "./registry/switch-field";
+import { TextareaFieldComp } from "./registry/textarea-field";
 import { BaseFieldType, FieldComponent, FieldRegistry } from "./types";
 import type { ComponentProps } from "react";
 

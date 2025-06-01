@@ -1,8 +1,11 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-    entry: ["src/index.tsx"],
-    splitting: false,
+    entry: [
+        "src/index.tsx",
+        "src/ui/index.tsx"
+    ],
+    splitting: true,
     clean: true,
     dts: true,
     format: ["esm"],

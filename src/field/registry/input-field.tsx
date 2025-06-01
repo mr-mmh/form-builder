@@ -28,7 +28,7 @@ const InputFieldComp = createFieldComp<InputField>((props) => {
     } = props;
 
     return (
-        <FieldComps.FieldWrapper className={cn("", className)}>
+        <FieldComps.FieldWrapper className={cn(className)}>
             <FieldComps.FieldLabel
                 label={label}
                 required={required}

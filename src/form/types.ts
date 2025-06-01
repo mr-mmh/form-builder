@@ -4,14 +4,28 @@ import { Schema } from "zod";
 import { GenFieldType } from "../field/types";
 import type {
     CheckboxField,
+} from "../field/registry/checkbox-field";
+import type {
     InputField,
+} from "../field/registry/input-field";
+import type {
     PasswordInputField,
-    RadioGroupField,
+} from "../field/registry/password-input-field";
+import type {
     SelectField,
+} from "../field/registry/select-field";
+import type {
     SliderField,
+} from "../field/registry/slider-field";
+import type {
     SwitchField,
+} from "../field/registry/switch-field";
+import type {
     TextareaField,
-} from "../field/registry";
+} from "../field/registry/textarea-field";
+import type {
+    RadioGroupField,
+} from "../field/registry/radio-field";
 
 export type SkipField = GenFieldType<"Skip", {}>;
 export type FormFieldSchema =
@@ -57,3 +71,5 @@ export type RenderFormProps<T, TFormSchema, K extends keyof T = keyof T> = {
     readonly?: boolean;
     as?: ElementType<any, "form" | "div" | "section">;
 };
+
+export type DIRType = "rtl" | "ltr";
