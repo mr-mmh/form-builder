@@ -1,58 +1,60 @@
 import { createFieldComp } from "../create-field-comp";
 import * as FieldComps from "../field-comps";
 import { GenFieldType } from "../types";
-import { cn } from "@/lib/utils";
-import { DIRType } from "@/form/types";
-import { Input } from "@/ui/input";
+import SlugInput from "@/ui/custom/slug-input";
 
-type InputField = GenFieldType<
-    "Input",
+type SlugInputField = GenFieldType<
+    "SlugInput",
     {
-        placeholder?: string;
-        inputClassName?: string;
         labelClassName?: string;
         descriptionClassName?: string;
-        dir?: DIRType;
+        inputClassName?: string;
+        placeholder?: string;
+        tooltipText?: string;
     }
 >;
-const InputFieldComp = createFieldComp<InputField>((props) => {
+
+const SlugInputFieldComp = createFieldComp<SlugInputField>((props) => {
     const {
         field,
         schema: {
             label,
+            disabled,
             description,
-            placeholder,
             className,
+            required,
             labelClassName,
             descriptionClassName,
             inputClassName,
-            required,
-            dir,
+            placeholder,
+            tooltipText,
         },
     } = props;
 
     return (
-        <FieldComps.FieldWrapper className={cn(className)}>
+        <FieldComps.FieldWrapper className={className}>
             <FieldComps.FieldLabel
                 label={label}
                 required={required}
                 className={labelClassName}
             />
             <FieldComps.FieldControl>
-                <Input
-                    {...field}
+                <SlugInput
+                    defaultValue={field.value}
+                    onChange={field.onChange}
+                    disabled={disabled}
+                    className={inputClassName}
+                    canEdit={false}
                     placeholder={placeholder}
-                    className={cn(inputClassName)}
-                    dir={dir}
+                    tooltip={tooltipText}
                 />
             </FieldComps.FieldControl>
             <FieldComps.FieldDescription
                 description={description}
                 className={descriptionClassName}
             />
-            <FieldComps.FieldMessage />
         </FieldComps.FieldWrapper>
     );
 });
 
-export { type InputField, InputFieldComp };
+export { type SlugInputField, SlugInputFieldComp };

@@ -28,7 +28,7 @@ function SlugInput({
     canEdit = true,
     endBtn = true,
     placeholder,
-    tooltip,
+    tooltip = "activate",
     changeEditSlug,
 }: SlugInputProps) {
     const [editSlug, setEditSlug] = useState(canEdit);

@@ -6,6 +6,7 @@ interface AutocompleteInputProps
     placeholder?: string;
     items: string[];
     threshold?: number;
+    closeBtnText?: string;
 }
 
 function AutocompleteInput({
@@ -15,6 +16,7 @@ function AutocompleteInput({
     onChange,
     placeholder,
     threshold,
+    closeBtnText,
 }: AutocompleteInputProps) {
     return (
         <AC.AutoCompelete
@@ -29,7 +31,7 @@ function AutocompleteInput({
                     disabled={disabled}
                 />
                 <AC.AutoCompletePopover>
-                    <AC.AutoCompeleteSuggestions />
+                    <AC.AutoCompeleteSuggestions closeBtnText={closeBtnText} />
                 </AC.AutoCompletePopover>
             </AC.AutoCompeleteInputArea>
             <AC.AutoCompeleteValuesArea>
@@ -39,5 +41,4 @@ function AutocompleteInput({
     );
 }
 
-
-export default AutocompleteInput
+export default AutocompleteInput;

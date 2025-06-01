@@ -1,7 +1,8 @@
-import { createFieldComp, FieldComps } from "./_shared";
+import { createFieldComp } from "../create-field-comp";
+import * as FieldComps from "../field-comps";
+import { GenFieldType } from "../types";
 import { cn } from "@/lib/utils";
 import * as Select from "@/ui/select";
-import type { GenFieldType } from "./_shared";
 
 type SelectField = GenFieldType<
     "Select",

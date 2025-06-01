@@ -270,11 +270,13 @@ export function AutoCompeleteSuggestions({
     liClassName,
     ulClassName,
     renderItem,
+    closeBtnText = "close",
 }: {
     className?: string;
     ulClassName?: string;
     liClassName?: string;
     renderItem?: (item: string) => JSX.Element;
+    closeBtnText?: string;
 }) {
     const {
         suggestions = [],
@@ -384,7 +386,7 @@ export function AutoCompeleteSuggestions({
                 className="flex w-full items-center justify-center gap-2"
             >
                 <X className="size-4" />
-                <span className="text-sm">بستن</span>
+                <span className="text-sm">{closeBtnText}</span>
             </Button>
         </div>
     );

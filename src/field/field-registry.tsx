@@ -1,9 +1,16 @@
+import { AutocompleteInputFieldComp } from "./registry/autocomplete-field";
 import { CheckboxFieldComp } from "./registry/checkbox-field";
+import { ColorInputFieldComp } from "./registry/color-input-field";
+import { ComboboxFieldComp } from "./registry/combobox-field";
+import { DynamicInputFieldComp } from "./registry/dynamic-input-field";
+import { DynamicListItemsFieldComp } from "./registry/dynamic-list-items-field";
 import { InputFieldComp } from "./registry/input-field";
+import { ListItemsFieldComp } from "./registry/list-items-field";
 import { PasswordInputFieldComp } from "./registry/password-input-field";
 import { RadioGroupComp } from "./registry/radio-field";
 import { SelectFieldComp } from "./registry/select-field";
 import { SliderFieldComp } from "./registry/slider-field";
+import { SlugInputFieldComp } from "./registry/slug-input-field";
 import { SwitchFieldComp } from "./registry/switch-field";
 import { TextareaFieldComp } from "./registry/textarea-field";
 import { BaseFieldType, FieldComponent, FieldRegistry } from "./types";
@@ -29,7 +36,7 @@ function registerField<T extends BaseFieldType>({
 }
 
 //? register builtin Field here
-function registerAll() {
+function getFieldRegistry() {
     registerField({ comp: InputFieldComp, name: "Input" });
     registerField({ comp: PasswordInputFieldComp, name: "PasswordInput" });
     registerField({ comp: CheckboxFieldComp, name: "Checkbox" });
@@ -37,6 +44,19 @@ function registerAll() {
     registerField({ comp: SliderFieldComp, name: "Slider" });
     registerField({ comp: SwitchFieldComp, name: "Switch" });
     registerField({ comp: TextareaFieldComp, name: "Textarea" });
+    registerField({ comp: ColorInputFieldComp, name: "ColorInput" });
+    registerField({ comp: DynamicInputFieldComp, name: "DynamicInput" });
+    registerField({ comp: ListItemsFieldComp, name: "ListItems" });
+    registerField({ comp: ComboboxFieldComp, name: "Combobox" });
+    registerField({
+        comp: DynamicListItemsFieldComp,
+        name: "DynamicListItems",
+    });
+    registerField({
+        comp: AutocompleteInputFieldComp,
+        name: "AutocompleteInput",
+    });
+    registerField({ comp: SlugInputFieldComp, name: "SlugInput" });
     const register = registerField({
         comp: RadioGroupComp,
         name: "RadioGroup",
@@ -44,5 +64,4 @@ function registerAll() {
     return register;
 }
 
-registerAll();
-export { fieldRegistry, registerField };
+export { getFieldRegistry, registerField };

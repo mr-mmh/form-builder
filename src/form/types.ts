@@ -2,30 +2,21 @@ import { ElementType } from "react";
 import { EventType } from "react-hook-form";
 import { Schema } from "zod";
 import { GenFieldType } from "../field/types";
-import type {
-    CheckboxField,
-} from "../field/registry/checkbox-field";
-import type {
-    InputField,
-} from "../field/registry/input-field";
-import type {
-    PasswordInputField,
-} from "../field/registry/password-input-field";
-import type {
-    SelectField,
-} from "../field/registry/select-field";
-import type {
-    SliderField,
-} from "../field/registry/slider-field";
-import type {
-    SwitchField,
-} from "../field/registry/switch-field";
-import type {
-    TextareaField,
-} from "../field/registry/textarea-field";
-import type {
-    RadioGroupField,
-} from "../field/registry/radio-field";
+import type { AutocompleteInputField } from "../field/registry/autocomplete-field";
+import type { CheckboxField } from "../field/registry/checkbox-field";
+import type { ColorInputField } from "../field/registry/color-input-field";
+import type { ComboboxField } from "../field/registry/combobox-field";
+import type { DynamicInputField } from "../field/registry/dynamic-input-field";
+import type { DynamicListItemsField } from "../field/registry/dynamic-list-items-field";
+import type { InputField } from "../field/registry/input-field";
+import type { ListItemsField } from "../field/registry/list-items-field";
+import type { PasswordInputField } from "../field/registry/password-input-field";
+import type { RadioGroupField } from "../field/registry/radio-field";
+import type { SelectField } from "../field/registry/select-field";
+import type { SliderField } from "../field/registry/slider-field";
+import type { SlugInputField } from "../field/registry/slug-input-field";
+import type { SwitchField } from "../field/registry/switch-field";
+import type { TextareaField } from "../field/registry/textarea-field";
 
 export type SkipField = GenFieldType<"Skip", {}>;
 export type FormFieldSchema =
@@ -37,6 +28,13 @@ export type FormFieldSchema =
     | SwitchField
     | CheckboxField
     | RadioGroupField
+    | AutocompleteInputField
+    | SlugInputField
+    | ColorInputField
+    | DynamicInputField
+    | DynamicListItemsField
+    | ListItemsField
+    | ComboboxField
     | SkipField;
 
 export type FormFields<T, TFields = FormFieldSchema> = {

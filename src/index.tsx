@@ -1,7 +1,7 @@
-import { fieldRegistry } from "./field/field-registry";
+import { getFieldRegistry } from "./field/field-registry";
 import { createRenderForm } from "./form/create-render-form";
 
-const RenderForm = createRenderForm(fieldRegistry);
+const RenderForm = createRenderForm(getFieldRegistry);
 export { RenderForm, createRenderForm };
 export type * from "./field/types";
 export type * from "./form/types";

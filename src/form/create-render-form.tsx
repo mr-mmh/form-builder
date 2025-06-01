@@ -16,7 +16,8 @@ import { Form as ShadcnForm } from "@/ui/form";
 
 export function createRenderForm<
     TFormSchema extends BaseFieldType = FormFieldSchema,
->(fieldRegistry: FieldRegistry) {
+>(fieldRegistryFn: () => FieldRegistry) {
+    const fieldRegistry = fieldRegistryFn();
     return function RenderForm<T, K extends keyof T>({
         formFields,
         defaultValues,

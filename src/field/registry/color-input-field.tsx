@@ -1,58 +1,51 @@
 import { createFieldComp } from "../create-field-comp";
 import * as FieldComps from "../field-comps";
 import { GenFieldType } from "../types";
-import { cn } from "@/lib/utils";
-import { DIRType } from "@/form/types";
-import { Input } from "@/ui/input";
+import ColorInput from "@/ui/custom/color-input";
 
-type InputField = GenFieldType<
-    "Input",
+type ColorInputField = GenFieldType<
+    "ColorInput",
     {
-        placeholder?: string;
-        inputClassName?: string;
         labelClassName?: string;
         descriptionClassName?: string;
-        dir?: DIRType;
     }
 >;
-const InputFieldComp = createFieldComp<InputField>((props) => {
+
+const ColorInputFieldComp = createFieldComp<ColorInputField>((props) => {
     const {
         field,
         schema: {
             label,
+            disabled,
             description,
-            placeholder,
             className,
+            required,
             labelClassName,
             descriptionClassName,
-            inputClassName,
-            required,
-            dir,
         },
     } = props;
 
     return (
-        <FieldComps.FieldWrapper className={cn(className)}>
+        <FieldComps.FieldWrapper className={className}>
             <FieldComps.FieldLabel
                 label={label}
                 required={required}
                 className={labelClassName}
             />
             <FieldComps.FieldControl>
-                <Input
-                    {...field}
-                    placeholder={placeholder}
-                    className={cn(inputClassName)}
-                    dir={dir}
+                <ColorInput
+                    defaultValue={field.value}
+                    onChange={field.onChange}
+                    disabled={disabled}
+                    className={className}
                 />
             </FieldComps.FieldControl>
             <FieldComps.FieldDescription
                 description={description}
                 className={descriptionClassName}
             />
-            <FieldComps.FieldMessage />
         </FieldComps.FieldWrapper>
     );
 });
 
-export { type InputField, InputFieldComp };
+export { type ColorInputField, ColorInputFieldComp };

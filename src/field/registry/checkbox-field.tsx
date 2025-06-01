@@ -1,7 +1,8 @@
-import { createFieldComp, FieldComps } from "./_shared";
 import { cn } from "@/lib/utils";
 import { Checkbox } from "@/ui/checkbox";
-import type { GenFieldType } from "./_shared";
+import { GenFieldType } from "../types";
+import { createFieldComp } from "../create-field-comp";
+import * as FieldComps from "../field-comps";
 
 type CheckboxField = GenFieldType<
     "Checkbox",

@@ -1,12 +1,13 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+    extends React.InputHTMLAttributes<HTMLInputElement> {
     endContent?: React.ReactNode;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({ className, type, endContent, dir = "rtl", ...props }, ref) => {
+    ({ className, type, endContent, dir = "ltr", ...props }, ref) => {
         const InputElement = (
             <input
                 dir={dir}
