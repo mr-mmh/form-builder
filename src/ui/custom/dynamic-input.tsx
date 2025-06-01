@@ -1,17 +1,18 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { FormFields, RenderForm, type DIRType } from "..";
-import { Label } from "../ui/label";
-import { StringOrElement } from "@/field/string-or-element";
-import { cn } from "@/lib/utils";
+import { FormFields, RenderForm } from "../..";
+import { Label } from "../label";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./select";
+} from "../select";
+import { cn } from "@/lib/utils";
+import { StringOrElement } from "@/ui/string-or-element";
+import type { DIRType } from "../..";
 
 type DynamicInputProps<
     TVariants extends string,
@@ -76,7 +77,10 @@ function DynamicInput<
                 onValueChange={(v) => {
                     if (v) {
                         setVariant(v as TVariants);
-                        handleChange({ ...sV[v as keyof typeof sV] }, v as TVariants);
+                        handleChange(
+                            { ...sV[v as keyof typeof sV] },
+                            v as TVariants,
+                        );
                     } else {
                         setVariant(undefined);
                         setVal(undefined);

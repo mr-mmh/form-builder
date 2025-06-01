@@ -1,5 +1,5 @@
 import { forwardRef, PropsWithChildren } from "react";
-import { StringOrElement } from "./string-or-element";
+import { StringOrElement } from "../ui/string-or-element";
 import { cn } from "@/lib/utils";
 import * as ShadcnForm from "@/ui/form";
 

@@ -2,9 +2,9 @@
 
 import { useCallback, useState } from "react";
 import { CirclePlus, Copy, Trash } from "lucide-react";
-import { FormFields, RenderForm } from "..";
-import { Button } from "../ui/button";
-import { TooltipWrapper } from "./tootltip-wrapper";
+import { FormFields, RenderForm } from "../..";
+import { Button } from "../button";
+import { TooltipWrapper } from "../tootltip-wrapper";
 import { cn } from "@/lib/utils";
 
 type WithId<T> = T & { id: string };

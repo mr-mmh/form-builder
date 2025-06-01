@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Pencil } from "lucide-react";
-import { Button } from "../ui/button";
-import { Input } from "./input";
-import { TooltipWrapper } from "./tootltip-wrapper";
+import { Button } from "../button";
+import { Input } from "../input";
+import { TooltipWrapper } from "../tootltip-wrapper";
 import { convertToSlug, writingSlug } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 

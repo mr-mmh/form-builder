@@ -2,16 +2,17 @@
 
 import { useCallback, useState } from "react";
 import { CirclePlus, Copy, Trash } from "lucide-react";
-import { FormFields, type DIRType } from "..";
-import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
+import { FormFields } from "../..";
+import { Badge } from "../badge";
+import { Button } from "../button";
+import { TooltipWrapper } from "../tootltip-wrapper";
 import DynamicInput from "./dynamic-input";
 import { cn } from "@/lib/utils";
-import { TooltipWrapper } from "./tootltip-wrapper";
+import type { DIRType } from "../..";
 
 type DynamicListItemsInputProps<
     TVariants extends string,
-    T extends { [key in TVariants]: { variant: key;[key: string]: any } },
+    T extends { [key in TVariants]: { variant: key; [key: string]: any } },
 > = {
     forms: {
         [key in TVariants]: FormFields<Omit<T[key], "variant">>;
@@ -39,7 +40,7 @@ type DynamicListItemsInputProps<
 
 function DynamicListItemsInput<
     TVariants extends string,
-    T extends { [key in TVariants]: { variant: key;[key: string]: any } },
+    T extends { [key in TVariants]: { variant: key; [key: string]: any } },
 >({
     forms,
     startValues,
@@ -141,7 +142,7 @@ function DynamicListItemsInput<
                         placeholder={
                             it.variant && it.variant.length
                                 ? variantOpts?.[it.variant as TVariants]
-                                    ?.placeholder
+                                      ?.placeholder
                                 : "انتخاب کنید"
                         }
                         selectLabel={

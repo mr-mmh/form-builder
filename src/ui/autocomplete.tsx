@@ -1,4 +1,4 @@
-import React, {
+import {
     ChangeEvent,
     ComponentPropsWithoutRef,
     createContext,
@@ -11,7 +11,6 @@ import React, {
     useRef,
     useState,
 } from "react";
-// import Fuse from "fuse.js";
 import { X } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -65,13 +64,13 @@ type DIVElementType = Omit<HTMLAttributes<HTMLDivElement>, "onChange">;
 type AutoCompeleteProps = {
     items: Items;
     onChange?: (newState: string[]) => void;
-    defaultValues?: string[];
+    defaultValue?: string[];
     className?: string;
 };
 
 export function AutoCompelete({
     items,
-    defaultValues,
+    defaultValue,
     onChange,
     className,
     children,
@@ -81,7 +80,7 @@ export function AutoCompelete({
     const [suggestions, setSuggestions] = useState<Items | undefined>();
     const [openSuggestion, toggleSuggestion] = useToggle();
     const [selectedItems, setSelectedItems] = useState<Items>(
-        defaultValues ?? [],
+        defaultValue ?? [],
     );
     const INPUT = useRef<HTMLInputElement | null>(null);
 
