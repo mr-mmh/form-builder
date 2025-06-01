@@ -1,6 +1,6 @@
 {
     "name": "@mrmmh/form-builder",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A reusable form component library using React and TailwindCSS",
     "type": "module",
     "main": "./dist/index.mjs",

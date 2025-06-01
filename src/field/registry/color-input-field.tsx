@@ -44,6 +44,7 @@ const ColorInputFieldComp = createFieldComp<ColorInputField>((props) => {
                 description={description}
                 className={descriptionClassName}
             />
+            <FieldComps.FieldMessage />
         </FieldComps.FieldWrapper>
     );
 });

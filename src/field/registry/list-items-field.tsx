@@ -70,6 +70,7 @@ const ListItemsFieldComp = createFieldComp<ListItemsField>((props) => {
                 description={description}
                 className={descriptionClassName}
             />
+            <FieldComps.FieldMessage />
         </FieldComps.FieldWrapper>
     );
 });

@@ -57,6 +57,7 @@ const AutocompleteInputFieldComp = createFieldComp<AutocompleteInputField>(
                     description={description}
                     className={descriptionClassName}
                 />
+                <FieldComps.FieldMessage />
             </FieldComps.FieldWrapper>
         );
     },

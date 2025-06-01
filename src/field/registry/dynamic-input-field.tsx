@@ -1,9 +1,9 @@
-import DynamicInput from "@/ui/custom/dynamic-input";
-import { DIRType } from "@/form/types";
-import type { FormFields } from "@/form/types";
-import { GenFieldType } from "../types";
 import { createFieldComp } from "../create-field-comp";
 import * as FieldComps from "../field-comps";
+import { GenFieldType } from "../types";
+import { DIRType } from "@/form/types";
+import DynamicInput from "@/ui/custom/dynamic-input";
+import type { FormFields } from "@/form/types";
 
 type DynamicInputField = GenFieldType<
     "DynamicInput",
@@ -64,6 +64,7 @@ const DynamicInputFieldComp = createFieldComp<DynamicInputField>((props) => {
                 description={description}
                 className={descriptionClassName}
             />
+            <FieldComps.FieldMessage />
         </FieldComps.FieldWrapper>
     );
 });

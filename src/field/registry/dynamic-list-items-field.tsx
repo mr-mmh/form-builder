@@ -72,6 +72,7 @@ const DynamicListItemsFieldComp = createFieldComp<DynamicListItemsField>(
                     description={description}
                     className={descriptionClassName}
                 />
+                <FieldComps.FieldMessage />
             </FieldComps.FieldWrapper>
         );
     },
